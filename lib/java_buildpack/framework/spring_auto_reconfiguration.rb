@@ -41,7 +41,7 @@ module JavaBuildpack::Framework
     protected
 
     def supports?
-      Dir["#{@app_dir}/**/#{SPRING_JAR_PATTERN}"].any?
+      Dir["#{@app_dir}/**/#{SPRING_JAR_PATTERN}"].any? && !Dir["#{@app_dir}/**/rm.xml"].any?
     end
 
     private
